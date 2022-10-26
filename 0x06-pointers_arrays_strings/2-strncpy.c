@@ -9,13 +9,18 @@
  * If str1 == str2, 0.
  * If str1 > str2, the positive difference of the first unmatched characters.
  */
-int _strcmp(char *s1, char *s2)
+char *_strncpy(char *dest, char *src, int n)
 {
-	while (*s1 && *s2 && *s1 == *s2)
-	{
-		s1++;
-		s2++;
-	}
+	int index = 0, src_len = 0;
 
-	return (*s1 - *s2);
+	while (src[index++])
+		src_len++;
+
+	or (index = 0; src[index] && index < n; index++)
+		dest[index] = src[index];
+
+	for (index = src_len; index < n; index++)
+		dest[index] = '\0';
+
+	return (dest);
 }
